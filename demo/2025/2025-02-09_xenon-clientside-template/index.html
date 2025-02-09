@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Simple HTML</title>
+    <link rel="stylesheet" type="text/css" href="main.css"/>
+    <style>
+        .label { font-size: 1.2em; color: wheat}
+        body {
+            font-family: Arial, Verdana, Tahoma;
+            color: #ffffff;
+            background-color: #4a87a9;
+            padding-top:  20px;
+            padding-left: 50px;
+        }
+    </style>
+
+    <script src="libs/p2js/xenon/xenon.js" defer></script>
+    <script src="main.js" defer></script>
+
+    <template _="greeting">
+        <p>Hello, World!</p>
+    </template>
+
+    <template _="joke" noun wink="<i>;)</i>">
+        <p>So you're telling me a {noun} fried this rice?</p>
+        {wink}
+    </template>
+
+    <template _="double">
+        {$children}
+        {$children}
+    </template>
+
+    <template _="conditional" name>
+        <if name>
+            <p>You're here, {name}!</p>
+        </if>
+    </template>
+
+</head>
+<body>
+    <h1>Demo of Xenon (client side HTML components)</h1>
+    <hr>
+    <greeting></greeting>
+
+    <hr>
+    <joke noun="shrimp"></joke>
+
+    <hr>
+    <double>
+        <p>Am I seeing double?</p>
+    </double>
+
+    <hr>
+    <conditional name="HTML lover"></conditional>
+    <conditional></conditional>
+
+
+    <hr>
+    <iframe hidden class="template-import" src="speech.template.html"></iframe>
+    <speech say="Ahoy there!"></speech>
+
+
+    <hr>
+    <p>See <a href="https://github.com/p2js/xenon">https://github.com/p2js/xenon</a> for more info</p>
+
+
+</body>
+</html>
