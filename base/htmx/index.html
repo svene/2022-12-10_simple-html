@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Simple HTML</title>
+    <link rel="stylesheet" type="text/css" href="main.css"/>
+    <script src="https://unpkg.com/htmx.org@1.9.0"></script>
+</head>
+<body>
+<div>Simple HTML</div>
+<!-- have a button POST a click via AJAX -->
+<button hx-get="/part1.html" hx-swap="outerHTML">
+    Click Me
+</button>
+
+</body>
+</html>
