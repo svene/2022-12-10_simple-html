@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Simple HTML</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@materializecss/materialize@2.0.3-alpha/dist/css/materialize.min.css"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+    <link rel="stylesheet" type="text/css" href="main.css"/>
+    <script src="main.js"></script>
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col s12 mb-2">
+            <ul class="tabs">
+                <li class="tab col s3"><a class="active" href="#tab_buttons">Buttons</a></li>
+                <li class="tab col s3"><a href="#tab_autocomplete">Autocomplete</a></li>
+                <li class="tab col s3"><a href="#tab_chips">Chips</a></li>
+                <li class="tab col s3"><a href="#flip_with_opacity">Flip with opacity</a></li>
+            </ul>
+        </div>
+        <div id="tab_buttons" class="col s12">
+            <a class="waves-effect waves-light btn" data-greet="Button 1">Button 1</a>
+            <button class="waves-effect waves-light btn">Button 1 with button tag</button>
+            <a class="waves-effect waves-teal btn-flat">Flat Button</a>
+        </div>
+        <div id="tab_autocomplete" class="col s12">
+            <div class="row">
+                <div class="col s12">
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <i class="material-icons prefix">textsms</i>
+                            <input type="text" id="autocomplete-input" class="autocomplete">
+                            <label for="autocomplete-input">Autocomplete</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="tab_chips" class="col s12">
+            <div class="chip">CSS</div>
+            <div class="chip">HTMX<i class="close material-icons">close</i></div>
+        </div>
+        <div id="flip_with_opacity" class="col s12">
+            <div class="mygrid">
+                <div class="back"><span>What A BACK</span><button onclick="changeOpacity()">Flip</button></div>
+                <div class="front"><span>What A FRONT</span><button onclick="changeOpacity()">Flip</button></div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<!--JavaScript at end of body for optimized loading-->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@materializecss/materialize@2.0.3-alpha/dist/js/materialize.min.js"></script>
+<script src="my-autocomplete.js"></script>
+</body>
+</html>

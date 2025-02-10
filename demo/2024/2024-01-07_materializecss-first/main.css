@@ -1,0 +1,25 @@
+:root {
+    --box-opacity: 1;
+}
+.mygrid {
+    display: grid;
+    grid-template-rows: auto min-content 16px;
+    margin-left: 100px;
+    margin-right: 100px;
+}
+.back {
+    grid-area: 1 / 1 / 1 / 1;
+    opacity: calc(1 - var(--box-opacity));
+    background-color: green;
+    color: white;
+}
+
+.front {
+    grid-area: 1 / 1 / 1 / 1;
+    opacity: var(--box-opacity);
+    background-color: blue;
+    color: white;
+}
+.front,.back {
+    transition: opacity 0.6s ease;
+}
