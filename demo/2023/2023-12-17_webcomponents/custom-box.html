@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Element Example</title>
+</head>
+<body>
+
+<!-- Define the template for the custom element -->
+<template id="custom-box-template">
+    <style>
+        :host {
+            display: block;
+            padding: 10px;
+            border: 2px solid; /* Default border color */
+        }
+
+        :host([collapsed]) {
+            border-color: blue; /* Blue border when collapsed attribute is present */
+        }
+
+        :host(:not([collapsed])) {
+            border-color: red; /* Red border when collapsed attribute is not present */
+        }
+    </style>
+    <slot></slot>
+</template>
+
+<!-- Register the custom element -->
+<script>
+    class CustomBox extends HTMLElement {
+        constructor() {
+            super();
+
+            // Create a shadow root
+            this.attachShadow({mode: 'open'});
+
+            // Clone the template content and append it to the shadow root
+            const template = document.getElementById('custom-box-template');
+            const templateContent = template.content.cloneNode(true);
+            this.shadowRoot.appendChild(templateContent);
+        }
+
+        static get observedAttributes() {
+            return ['collapsed'];
+        }
+
+        attributeChangedCallback(name, oldValue, newValue) {
+            if (name === 'collapsed') {
+                if (this.hasAttribute('collapsed')) {
+                    this.setAttribute('aria-hidden', 'true');
+                } else {
+                    this.removeAttribute('aria-hidden');
+                }
+            }
+        }
+    }
+
+    customElements.define('custom-box', CustomBox);
+</script>
+
+<!-- Example usage of the custom element -->
+<custom-box>Default Box</custom-box>
+<custom-box collapsed>Collapsed Box</custom-box>
+
+</body>
+</html>

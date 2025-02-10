@@ -1,0 +1,6 @@
+my-custom-element {
+    border: dashed red;
+}
+my-custom-element:--hidden {
+    border: none;
+}
