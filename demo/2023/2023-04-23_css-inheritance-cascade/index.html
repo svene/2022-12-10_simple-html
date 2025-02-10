@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" type="text/css" href="main.css"/>
+    <meta charset="UTF-8">
+    <title>Simple HTML</title>
+    <link rel="stylesheet" type="text/css" href="main.css"/>
+    <style>
+        body {
+            background-color: lightblue;
+        }
+        .explanations {
+            margin: 10px;
+            padding: 10px;
+        }
+
+        .parent {
+            margin: 10px;
+            padding: 10px;
+
+            color: blue;
+            background-color: lightgrey;
+        }
+        .child1 {
+            margin: 10px;
+            padding: 10px;
+            border-style: solid;
+            border-width: 1px;
+            border-color: black;
+
+            color: white;
+        }
+        .child2 {
+            margin: 10px;
+            padding: 10px;
+            border-style: solid;
+            border-width: 1px;
+            border-color: black;
+
+            color: white;
+            background-color: lightgreen;
+        }
+    </style>
+</head>
+<body>
+<div class="parent">
+    Parent <pre>{color: blue;background-color: lightgrey;}</pre>
+    <div class="child1">Child 1 <pre>{color: white;}</pre></div>
+    <div class="child2">Child 2 <pre>{color: white;background-color: lightgreen;}</pre></div>
+</div>
+
+<div class="explanations">
+    <h3>Some explanations:</h3>
+    <p>
+        The default background-color is 'transparent' (<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/background-color#formal_definition">See 'Formal definition' in specs</a>).
+        That is the reason why Child 1 appears to have the same background-color as it's parent div
+    </p>
+</div>
+
+</body>
+</html>
