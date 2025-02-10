@@ -7,7 +7,5 @@ function changeOpacity() {
     document.documentElement.style.setProperty('--box-opacity', newOpacity);
 }
 
-document.addEventListener("DOMContentLoaded", () => {
-    const el = document.getElementsByClassName('tabs');
-    var instance = M.Tabs.init(el);
-})
+const el = document.getElementsByClassName('tabs');
+var instance = M.Tabs.init(el);
