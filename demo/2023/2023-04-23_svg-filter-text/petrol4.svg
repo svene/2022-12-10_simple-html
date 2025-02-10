@@ -1,0 +1,18 @@
+<svg width="800" height="400" xmlns="http://www.w3.org/2000/svg">
+    <style>
+        .filtered {
+        font: bold 50px sans-serif;
+        filter: url(#myfilter);
+        }
+    </style>
+
+    <filter id="myfilter">
+        <feFlood flood-color="#F79308" result="COLOR" />
+        <feComposite operator="in" in="COLOR" in2="SourceAlpha" />
+
+    </filter>
+
+    <g class="filtered">
+        <text x="0" y="300" font-size="3em" transform="rotate(-12)">Petrol 4</text>
+    </g>
+</svg>
