@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Simple HTML</title>
+    <link rel="stylesheet" type="text/css" href="main.css" media=”screen” />
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.13.3/dist/cdn.min.js"></script>
+</head>
+<body>
+<div x-data="{ count: 0 }">
+    <button x-on:click="count--">--</button>
+    <span x-text="count"></span>
+    <button x-on:click="count++">++</button>
+</div>
+
+</body>
+</html>

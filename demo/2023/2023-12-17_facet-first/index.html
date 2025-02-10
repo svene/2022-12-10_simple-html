@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Simple HTML</title>
+    <link rel="stylesheet" type="text/css" href="main.css" media=”screen” />
+    <script src="https://cdn.jsdelivr.net/gh/kgscialdone/facet@0.1.1/facet.min.js"></script>
+</head>
+<body>
+<template component="hello-world">
+    <p>Hello, <slot>world</slot>!</p>
+</template>
+<hello-world></hello-world>
+<hello-world>Facet</hello-world> <!-- replaces "world" with "Facet" -->
+
+
+<template component="observed-attrs" observe="name title value">
+    <p><slot>observed attrs</slot></p>
+    <input inherit="name value">
+    <script on="attributeChanged">console.log(event.detail.name)</script>
+</template>
+<observed-attrs name="my-name" title="my-title" value="Sven">observed attrs</observed-attrs>
+
+<template component="labeled-input">
+    <label inherit="name>for required"><slot>Input</slot></label>
+    <input inherit="name>id type value required placeholder">
+</template>
+<labeled-input name="email" type="email" required value="Sven">Email</labeled-input>
+
+<template component="observe-inherit" observe="div-style">
+    <div inherit="div-style>style"></div>
+    <script on="connect">console.log('connected')</script>
+</template>
+
+<!-- Changing the div-style attribute will automatically update the inner <div>'s styles! -->
+<observe-inherit div-style="width:100px;height:100px;background:rebeccapurple;"></observe-inherit>
+
+</body>
+</html>
