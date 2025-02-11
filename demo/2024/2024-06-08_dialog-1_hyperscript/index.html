@@ -17,8 +17,8 @@ See: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dialog
 <dialog
     id="xfavDialog"
     _="
-    on app_open_request from <body/> me.showModal()
-    on a_close log 'dialog:' then set v to event.detail.message then log v then set j_me to me then js(v, j_me) j_me.close(v) end
+    on a_show_dialog from <body/> me.showModal()
+    on a_close log `dialog: ${event.detail.message}` then me.close(event.detail.message)
     ">
     <form>
         <p>
@@ -48,7 +48,7 @@ See: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dialog
 </dialog>
 
 <p>
-    <button id="showDialog" _="on click send app_open_request">
+    <button id="showDialog" _="on click send a_show_dialog">
         Show the dialog
     </button>
 </p>
