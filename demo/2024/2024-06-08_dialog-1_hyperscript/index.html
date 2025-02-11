@@ -19,7 +19,10 @@ See: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dialog
     _="
     on a_show_dialog from <body/> me.showModal()
     on a_close log `dialog: ${event.detail.message}` then me.close(event.detail.message) -- close the dialog with the `close()` method, which triggers the 'close' event
-    on close log [`dialog: close-event: `, event]
+    on close log [`dialog: close-event: `, returnValue of me]
+      then set _v to returnValue of me
+      then if _v is 'default' set _v to 'None' end
+      then set value of next <output/> to _v
     ">
     <form>
         <p>
@@ -34,6 +37,7 @@ See: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dialog
             </label>
         </p>
         <div>
+            <!-- "Cancel" button closes the dialog without submitting because of [formmethod="dialog"], triggering a close event. -->
             <button value="cancel" formmethod="dialog">Cancel</button>
             <button
                 id="confirmBtn"

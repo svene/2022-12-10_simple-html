@@ -16,12 +16,3 @@ selectEl.addEventListener("change", (e) => {
 });
 */
 
-// "Cancel" button closes the dialog without submitting because of [formmethod="dialog"], triggering a close event.
-/*
-favDialog.addEventListener("close", (e) => {
-    outputBox.value =
-            favDialog.returnValue === "default"
-                    ? "No return value."
-                    : `ReturnValue: ${favDialog.returnValue}.`; // Have to check for "default" rather than empty string
-});
-*/
