@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Styling of Undefined Custom Elements</title>
+</head>
+<body>
+<p>Demonstrates that undefined (not registered) custom elements can be styled and therefore be used for semantic html
+<p>Example:
+<pre>
+        &lt;thing&gt;&lt;/thing&gt;
+    </pre>
+
+<thing>Yo</thing>
+<thing_test>Yo</thing_test>
+<thing_-test>Yo</thing_-test>
+
+<!-- not working:
+<_thing_test>Yo</_thing_test>
+<-thing_test>Yo</-thing_test>
+-->
+
+<thing_-TEST2>Yo</thing_-TEST2>
+<div thing>Yo</div>
+<div class="thing">Yo</div>
+<style>
+    thing, thing_test, thing_-test, _thing_test, -thing_test, thing_-TEST2, [thing], .thing {
+        background: red;
+    }
+</style>
+</body>
+</html>
