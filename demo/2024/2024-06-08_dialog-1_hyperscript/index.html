@@ -26,6 +26,8 @@ See: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dialog
     on close
       --- log [`dialog: close-event: `, returnValue of me] then
       set _v to returnValue of me
+      then log `'${_v}'`
+      then if no _v set _v to '-' end
       then if _v is 'default' set _v to 'None' end
       then send a_new_modal_value(value: _v) to <body/>
     ">
@@ -44,9 +46,9 @@ See: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dialog
         <div>
             <!-- "Cancel" button closes the dialog without submitting because of [formmethod="dialog"], triggering a close event. -->
             <button value="cancel" formmethod="dialog">Cancel</button>
+            <button value="w/o formmethod">w/o formmethod: dialog</button>
             <button
                 id="confirmBtn"
-                value="default"
                 _="
                 -- Prevent the 'confirm' button from the default behavior of submitting the form (We don't want to submit this fake form):
                 on click
@@ -69,6 +71,14 @@ See: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dialog
     _="on a_new_modal_value from <body/> set value of me to event.detail.value"
 >
 </output>
+
+<p>Note:</p>
+<p>The <i>Cancel</i> button uses <i>formmethod=dialog</i>. This closes the dialog but does not send the form
+<p>The <i>w/o formmethod: dialog</i> button uses no <i>formmethod</i> attribute.
+    This closes the dialog and reloads the whole page (bc. it submits the form ?)
+<p>The <i>Confirm</i> button uses no <i>formmethod</i> attribute but prevents default behavior (event.preventDefault()).
+    This closes the dialog and causes <i>dialog.close(value of select)</i> to be called which in turn triggers the <i>close</i> event
+    and the setting of <i>dialog.returnValue</i>.
 
 </body>
 </html>
