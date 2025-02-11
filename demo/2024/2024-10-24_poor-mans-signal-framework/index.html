@@ -7,13 +7,30 @@
     <meta charset="UTF-8">
     <title>Simple HTML</title>
     <link rel="stylesheet" type="text/css" href="main.css"/>
-    <script src="main.js" defer></script>
+    <script src="main-simple.js" defer></script>
 </head>
 <body>
 <h1>Poor man's signal framework</h1>
 <p>See this <a href="https://nolanlawson.com/2023/12/02/lets-learn-how-modern-javascript-frameworks-work-by-building-one/">Article</a></p>
 
-<div id="container"></div>
+<div id="container">
+    <div>-</div>
+</div>
+
+<!-- Control: -->
+<div style="margin-top: 10px;">a
+    <button onclick="state.a = state.a + 1">+</button>
+    <button onclick="state.a = state.a - 1">-</button>
+</div>
+<div style="margin-top: 10px;">b
+    <button onclick="state.b = state.b + 1">+</button>
+    <button onclick="state.b = state.b - 1">-</button>
+</div>
+
+<div style="margin-top: 10px;">
+    <button onclick="state.color = 'blue';">make Blue</button>
+    <button onclick="state.color = 'red';">make Red</button>
+</div>
 
 </body>
 </html>
