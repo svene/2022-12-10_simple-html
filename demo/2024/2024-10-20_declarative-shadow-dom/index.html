@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Simple HTML</title>
+</head>
+<body>
+
+<ui-card>
+    <template shadowrootmode="open">
+        <style>
+            div {color: white; background-color: darkblue; }
+        </style>
+        <div>before</div>
+        <slot></slot>
+        <div>after</div>
+    </template>
+
+    <!-- Light DOM -->
+    <div>hello</div> <!-- goes into slot -->
+</ui-card>
+
+</body>
+</html>
+
+<!--
+NOTES:
+Does not work when set with innerHTML().
+Therefore not suited for use with HTMX for example.
+-->
