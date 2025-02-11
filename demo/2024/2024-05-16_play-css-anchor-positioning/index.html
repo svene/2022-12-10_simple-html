@@ -1,0 +1,70 @@
+<!--
+ anchor positioning example with chrome 125 (see https://developer.chrome.com/blog/anchor-positioning-api)
+ styling as in https://codepen.io/web-dot-dev/pen/GRaRyKm
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Simple HTML</title>
+    <style>
+        .anchor {
+            position: absolute;
+            anchor-name: --anchor-el;
+        }
+        .anchored-notice {
+            position: absolute;
+            position-anchor: --anchor-el;
+            left: anchor(--anchor-el right);
+            top: anchor(--anchor-el bottom);
+        }
+
+        /* Misc styling */
+        .anchor {
+            background: linear-gradient(45deg, blueviolet, blue);
+            font-size: 2rem;
+            display: grid;
+            place-items: center;
+            border-radius: 100%;
+            aspect-ratio: 1 / 1;
+            width: 3.5rem;
+            line-height: 0;
+            margin-top: 60dvh;
+
+            p {
+                filter: brightness(2);
+            }
+        }
+        .anchored-notice {
+            font-family: system-ui, sans-serif;
+            background: #333;
+            border-radius: 0.75rem;
+            color: white;
+            padding: 1rem;
+            max-width: 250px;
+            line-height: 1.5;
+        }
+
+        code {
+            font-family: monospace;
+            background: dimgray;
+            padding: 0.25rem;
+            border-radius: 0.25rem;
+            border: 1px solid gray;
+        }
+
+        body {
+            display: grid;
+            grid-template-rows: 1fr;
+            justify-content: center;
+            height: 100vh;
+        }
+    </style>
+</head>
+<body>
+<div class="anchor"><p>⚓︎</p></div>
+<div class="anchored-notice">
+    <p>I am a positioned element that is tethered to the top-right of the <code>anchor</code> at my bottom-right.<p>
+</div>
+</body>
+</html>
