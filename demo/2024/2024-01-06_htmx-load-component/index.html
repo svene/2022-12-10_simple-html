@@ -5,13 +5,9 @@
     <title>Simple HTML</title>
     <link rel="stylesheet" type="text/css" href="main.css"/>
     <script src="https://unpkg.com/htmx.org@1.9.10"></script>
-    <script src="https://cdn.jsdelivr.net/gh/kgscialdone/facet@0.1.2/facet.js" libonly></script>
+    <script src="https://cdn.jsdelivr.net/gh/kgscialdone/facet@0.1.2a/facet.js" libonly></script>
 </head>
 <body hx-ext="template">
-<template mixin="alert">
-    <script on="connect">alert("Connected!")</script>
-</template>
-
 <h1>HTMX Template Extension Demo</h1>
 <button hx-get="part1.html" hx-on::after-swap="console.log('after-swap')" hx-swap="outerHTML">1: Load Component</button>
 <hello-world></hello-world>
