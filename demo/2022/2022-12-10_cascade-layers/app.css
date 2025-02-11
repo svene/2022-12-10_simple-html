@@ -1,0 +1,8 @@
+@import url('framework.css') layer(framework);
+
+@layer app {
+    .fw-text {
+        background-color: green;
+    }
+}
+

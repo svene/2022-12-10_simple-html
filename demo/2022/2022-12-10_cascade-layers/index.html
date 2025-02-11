@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Simple HTML</title>
+    <style>
+        /* Define layer ordering: Last one in list has highest priority. */
+        /* This way the app can override the styles from the framework: */
+        @layer framework, app;
+        /*@layer app, framework;*/
+    </style>
+    <link rel="stylesheet" href="app.css">
+</head>
+<body>
+<div class="fw-text">FW Text</div>
+
+<p>From <a href="https://css-tricks.com/css-cascade-layers/">css-cascade-layers</a></p>
+
+</body>
+</html>
