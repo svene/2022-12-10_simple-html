@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Simple HTML</title>
+    <script src="https://unpkg.com/htmx.org@2.0.2"></script>
+</head>
+<body>
+<button
+    hx-post="/~robert/drop?table=Students"
+    popovertarget="confirm-danger"
+    hx-trigger="close[target.returnValue === 'yes'] from:#confirm-danger">
+    Do dangerous thing
+</button>
+
+<dialog popover id="confirm-danger">
+    <form method="dialog">
+        Are you sure you want to do the dangerous thing?
+        <button value="yes">Yes, do dangerous thing</button>
+        <button value="no">No, stay safe</button>
+    </form>
+</dialog>
+
+</body>
+</html>
