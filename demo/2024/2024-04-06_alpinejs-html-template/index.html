@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Simple HTML</title>
+    <link rel="stylesheet" type="text/css" href="main.css"/>
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.13.3/dist/cdn.min.js"></script>
+</head>
+<body>
+<div x-data="{ count: 6 }">
+    <button x-on:click="count--">--</button>
+    <span x-text="count"></span>
+    <button x-on:click="count++">++</button>
+
+    <p>When counter is > 5 then additional content will be shown below:</p>
+    <template x-if="count > 5">
+        <div class="counter-template">
+            <p>in template</p>
+            <span>Counter is: <slot x-text="count"></slot></span>
+            <p>in template</p>
+        </div>
+    </template>
+</div>
+
+</body>
+</html>
