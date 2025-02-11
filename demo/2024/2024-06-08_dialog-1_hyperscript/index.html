@@ -18,7 +18,8 @@ See: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dialog
     id="xfavDialog"
     _="
     on a_show_dialog from <body/> me.showModal()
-    on a_close log `dialog: ${event.detail.message}` then me.close(event.detail.message)
+    on a_close log `dialog: ${event.detail.message}` then me.close(event.detail.message) -- close the dialog with the `close()` method, which triggers the 'close' event
+    on close log [`dialog: close-event: `, event]
     ">
     <form>
         <p>
@@ -37,9 +38,13 @@ See: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dialog
             <button
                 id="confirmBtn"
                 value="default"
-                _="on click call event.preventDefault()
-                then set v to first of value of <select/>
-                then send a_close(message: v) to <dialog/>"
+                _="
+                -- Prevent the 'confirm' button from the default behavior of submitting the form (We don't want to submit this fake form):
+                on click call event.preventDefault()
+
+                -- send the value of the select box value:
+                then send a_close(message: first of value of <select/>) to <dialog/>
+                "
             >
                 Confirm
             </button>
