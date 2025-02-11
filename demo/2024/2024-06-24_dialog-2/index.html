@@ -1,0 +1,35 @@
+<!--
+See:
+ https://x.com/wesbos/status/1791526837153038639
+ https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dialog
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Simple HTML</title>
+    <link rel="stylesheet" type="text/css" href="main.css"/>
+</head>
+<body>
+
+<dialog id="favDialog">
+    <form method="dialog">
+        <h2>This is my dialog</h2>
+        <button type="submit">OK</button>
+    </form>
+</dialog>
+
+<form>
+    <label for="firstname">Firstname</label>
+    <input type="text" id="firstname" name="firstname">
+</form>
+
+
+<p>
+    <button onclick="document.getElementById('favDialog').showModal()">Open Dialog</button>
+</p>
+<output></output>
+
+</body>
+</html>
