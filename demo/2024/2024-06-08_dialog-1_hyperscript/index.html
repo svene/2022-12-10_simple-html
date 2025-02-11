@@ -1,0 +1,58 @@
+<!--
+See: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dialog
+-->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Simple HTML</title>
+    <link rel="stylesheet" type="text/css" href="main.css"/>
+    <script src="https://unpkg.com/hyperscript.org@0.9.12"></script>
+    <!--    <script src="main.js" defer></script>-->
+</head>
+<body>
+
+<dialog
+    id="xfavDialog"
+    _="
+    on app_open_request from <body/> me.showModal()
+    on a_close log 'dialog:' then set v to event.detail.message then log v then set j_me to me then js(v, j_me) j_me.close(v) end
+    ">
+    <form>
+        <p>
+            <label>
+                Favorite animal:
+                <select>
+                    <option value="default">Choose…</option>
+                    <option>Brine shrimp</option>
+                    <option>Red panda</option>
+                    <option>Spider monkey</option>
+                </select>
+            </label>
+        </p>
+        <div>
+            <button value="cancel" formmethod="dialog">Cancel</button>
+            <button
+                id="confirmBtn"
+                value="default"
+                _="on click call event.preventDefault()
+                then set v to first of value of <select/>
+                then send a_close(message: v) to <dialog/>"
+            >
+                Confirm
+            </button>
+        </div>
+    </form>
+</dialog>
+
+<p>
+    <button id="showDialog" _="on click send app_open_request">
+        Show the dialog
+    </button>
+</p>
+<output></output>
+
+</body>
+</html>
