@@ -13,11 +13,30 @@ See: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dialog
 </head>
 <body>
 
-<dialog>
-    <button autofocus>Close</button>
-    <p>This modal dialog has a groovy backdrop!</p>
+<dialog id="favDialog">
+    <form>
+        <p>
+            <label>
+                Favorite animal:
+                <select>
+                    <option value="default">Choose…</option>
+                    <option>Brine shrimp</option>
+                    <option>Red panda</option>
+                    <option>Spider monkey</option>
+                </select>
+            </label>
+        </p>
+        <div>
+            <button value="cancel" formmethod="dialog">Cancel</button>
+            <button id="confirmBtn" value="default">Confirm</button>
+        </div>
+    </form>
 </dialog>
-<button>Show the dialog</button>
+
+<p>
+    <button id="showDialog">Show the dialog</button>
+</p>
+<output></output>
 
 </body>
 </html>
