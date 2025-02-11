@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Simple HTML</title>
+    <link rel="stylesheet" type="text/css" href="main.css"/>
+    <script src="https://unpkg.com/htmx.org@1.9.0"></script>
+    <script src="https://cdn.jsdelivr.net/gh/katrinakitten/htmx-template@1.0.1/htmx-template.min.js"></script>
+</head>
+<body hx-ext="template">
+<h1>HTMX Template Extension Demo</h1>
+<p>See <a href="https://github.com/kgscialdone/htmx-template" target="_blank">HTMX-Template</a></p>
+
+<p hx-get="template:lorem" hx-trigger="load delay:3s">Loading in 3 seconds...</p>
+
+<template id="lorem">Lorem ipsum dolor sit amet...</template>
+
+</body>
+</html>
