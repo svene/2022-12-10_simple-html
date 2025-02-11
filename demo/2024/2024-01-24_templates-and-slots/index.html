@@ -16,10 +16,15 @@
             padding: 5px;
         }
     </style>
-    <p>My paragraph</p>
+    <p><slot name="my-text">Just the default text</slot></p>
+
 </template>
 
 <my-paragraph></my-paragraph>
+
+<my-paragraph>
+    <span slot="my-text">Overridden Slot</span>
+</my-paragraph>
 
 
 </body>
