@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Simple HTML</title>
+    <style>
+        .label { font-size: 1.2em; color: wheat}
+        body {
+            font-family: Arial, Verdana, Tahoma;
+            color: #ffffff;
+            background-color: #4a87a9;
+            padding-top:  20px;
+            padding-left: 50px;
+        }
+    </style>
+
+    <script src="main.js" defer></script>
+</head>
+<body>
+<p>The existing 2 greet divs below will be processed only at document load time.</p>
+<p>Therefore when you click the button a new greet div is appended but not processed anymore</p>
+<p><button onclick="appendGreeting()">Append &lt;div data-greet='Bart'&gt;Greet 3&lt;/div&gt;</button>
+<div data-greet="John">Greet 1</div>
+<div data-greet="Boy">Greet 2</div>
+
+<hr>
+
+<p>In this example the existing 2 greet2 divs below will be processed my a MutationObserver</p>
+<p>This is the reason that when you click the button and a new greet2 div is appended it will be processed as well by the MutationObserver </p>
+<p><button onclick="appendGreeting2()">Append &lt;div data-greet2='Bart'&gt;Greet 3&lt;/div&gt;</button>
+<div data-greet2="John">Greet 1</div>
+<div data-greet2="Boy">Greet 2</div>
+
+</body>
+</html>
