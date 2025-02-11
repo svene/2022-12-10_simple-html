@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Remote OpenGraph Meta Tags</title>
+    <link rel="stylesheet" type="text/css" href="main.css" media=”screen” />
+    <script src="https://unpkg.com/htmx.org@1.9.4" crossorigin="anonymous"></script>
+    <script src="greet.js"></script>
+</head>
+<body>
+<div id="meta-tags">
+    <!-- This div will be populated with the meta tags -->
+</div>
+
+<button hx-get="https://dev.to/mfp22/10-tips-for-scaling-signals-1nap" hx-trigger="click" hx-swap="outerHTML" hx-target="#meta-tags">
+    Fetch Meta Tags
+</button>
+<!--
+    <button hx-get="https://dev.to/mfp22/10-tips-for-scaling-signals-1nap" hx-trigger="revealed" >
+        Fetch Meta Tags
+    </button>
+-->
+
+<script>
+    function extractMetaTags(html) {
+        const parser = new DOMParser();
+        const doc = parser.parseFromString(html, 'text/html');
+        const tagOgImage = doc.querySelector('meta[property="og:image"]');
+        let image = '';
+        if (tagOgImage) {
+            image = `<img src="${tagOgImage.getAttribute('content')}">`
+        }
+        const metaTags = doc.querySelectorAll('meta[property="og:image"]');
+        let x1 = Array.from(metaTags)
+                .map(tag => tag.getAttribute('content'));
+        let x2 = x1
+                .map(it => `<img src="${it}">`)
+                .join('');
+        debugger;
+        // return x2;
+        return image;
+    }
+
+
+    // Remove all extra htmx headers, re-add content-type.
+    document.body.addEventListener('htmx:configRequest', function(event) {
+        event.detail.headers = ''
+        event.detail.headers['Content-Type'] = "application/x-www-form-urlencoded; charset=UTF-8"
+    });
+
+    // document.addEventListener('htmx:afterSwap', function (event) {
+    //     const metaTagsHtml = extractMetaTags(event.detail.swapped.outerHTML);
+    //     // document.getElementById('meta-tags').innerHTML = metaTagsHtml;
+    // });
+
+    document.addEventListener('htmx:beforeSwap', function (event) {
+        console.log(event.detail);
+        const metaTagsHtml = extractMetaTags(event.detail.serverResponse);
+        debugger;
+        document.getElementById('meta-tags').innerHTML = metaTagsHtml;
+        event.detail.shouldSwap = false;
+    });
+</script>
+
+</body>
+</html>
