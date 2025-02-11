@@ -17,14 +17,25 @@
         }
     </style>
     <p><slot name="my-text">Just the default text</slot></p>
-
+    <slot>unnamed slot</slot>
 </template>
 
 <my-paragraph></my-paragraph>
+<hr>
 
 <my-paragraph>
     <span slot="my-text">Overridden Slot</span>
 </my-paragraph>
+<hr>
+
+<!-- Demonstrate how top level children get filled into the unnamed slot-->
+<my-paragraph>
+    <div>text 1</div>
+    <span slot="my-text">Overridden Slot</span>
+    <div>text 2</div>
+    <div>text 3</div>
+</my-paragraph>
+<hr>
 
 
 </body>
