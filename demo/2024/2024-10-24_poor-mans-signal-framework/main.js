@@ -1,3 +1,4 @@
+// Reactivity
 const propsToEffects = {}
 const dirtyEffects = []
 let queued = false
@@ -55,22 +56,8 @@ createEffect(() => {
     state.sum = state.a + state.b
 })
 
-createEffect(() => {
-    state.prod = state.a * state.b
-})
+// HTML rendering
 
-// Let's test it out!
-
-console.log({ ...state })
-
-console.log('Setting a to', 5)
-state.a = 5
-
-Promise.resolve().then(() => {
-    console.log({ ...state })
-})
-
-// -------------------------------------------------------
 const tokensToTemplate = new WeakMap()
 
 function parseTemplate(htmlString) {
@@ -110,8 +97,22 @@ function render(state) {
   `
 }
 
-// Let's test it out!
-document.body.appendChild(render({ color: 'blue', text: 'Blue!' }))
+// Tying it all together
 
-// And again!
-document.body.appendChild(render({ color: 'red', text: 'Red!' }))
+state.color = 'blue'
+
+const container = document.getElementById('container')
+
+createEffect(() => {
+    console.log('rendering', state)
+    const dom = render(state)
+    if (container.firstElementChild) {
+        container.firstElementChild.replaceWith(dom)
+    } else {
+        container.appendChild(dom)
+    }
+})
+
+createEffect(() => {
+    state.text = `Sum is: ${state.sum}`
+})
