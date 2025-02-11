@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
     <link rel="stylesheet" type="text/css" href="main.css" media=”screen” />
     <script src="https://unpkg.com/htmx.org@1.9.4" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/htmx.org/dist/ext/debug.js"></script>
     <script type="module" src="main.js"></script>
 </head>
 <body>
@@ -14,16 +15,8 @@
         <!-- This div will be populated with the meta tags -->
     </div>
 
-    <button hx-get="https://dev.to/mfp22/10-tips-for-scaling-signals-1nap" hx-trigger="click" hx-swap="outerHTML" hx-target="#meta-tags">
-        Fetch Meta Tags
-    </button>
-    <!--
-        <button hx-get="https://dev.to/mfp22/10-tips-for-scaling-signals-1nap" hx-trigger="revealed" >
-            Fetch Meta Tags
-        </button>
-    -->
-
-    <a data-href="https://dev.to/mfp22/10-tips-for-scaling-signals-1nap">link 1</a>
+    <div hx-ext="debug" hx-get="https://dev.to/mfp22/10-tips-for-scaling-signals-1nap" hx-swap="outerHTML" hx-trigger="revealed">link 1</div>
+    <div hx-ext="debug" hx-get="https://medium.com/angularwave/telegraph-with-rxjs-5c74e2f585b3" hx-swap="outerHTML" hx-trigger="revealed">link 1</div>
 
 </main>
 

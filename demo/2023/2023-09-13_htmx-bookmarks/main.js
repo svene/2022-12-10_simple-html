@@ -29,7 +29,9 @@ function extractOpenGraphMetaTags(html) {
 
 document.addEventListener('htmx:beforeSwap', function (event) {
     const og = extractOpenGraphMetaTags(event.detail.serverResponse);
-    document.getElementById('meta-tags').innerHTML = `
+    console.log(event.detail.target);
+    // document.getElementById('meta-tags').innerHTML = `
+    event.detail.target.outerHTML = `
             <article>
                 <hgroup>
                     <h2>${og.title}</h2>
