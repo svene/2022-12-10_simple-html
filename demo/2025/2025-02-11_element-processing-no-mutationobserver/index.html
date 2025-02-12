@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Simple HTML</title>
+    <style>
+        .label { font-size: 1.2em; color: wheat}
+        body {
+            font-family: Arial, Verdana, Tahoma;
+            color: #ffffff;
+            background-color: #4a87a9;
+            padding-top:  20px;
+            padding-left: 50px;
+        }
+    </style>
+
+    <script src="main.js" defer></script>
+</head>
+<body>
+<p>The existing 2 greet divs below will be processed only at document load time.</p>
+<p>Therefore when you click the button a new greet div is appended but not processed anymore</p>
+<p><button onclick="appendGreeting()">Append &lt;div data-greet='Bart'&gt;Greet 3&lt;/div&gt;</button>
+<div data-greet="John">Greet 1</div>
+<div data-greet="Boy">Greet 2</div>
+
+</body>
+</html>
