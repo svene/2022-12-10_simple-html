@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Simple HTML</title>
+    <script src="https://unpkg.com/hyperscript.org@0.9.14"></script>
+    <style>
+        .label { font-size: 1.2em; color: wheat}
+        body {
+            font-family: Arial, Verdana, Tahoma;
+            color: #ffffff;
+            background-color: #4a87a9;
+            padding-top:  20px;
+            padding-left: 50px;
+        }
+    </style>
+</head>
+<body>
+<section aria-labelledby="overview">
+    <h2 id="overview">Overview</h2>
+    <p>Content that might reference a <a href="#faq:term">TERM</a> that is defined in an accordion FAQ.
+        And another term <a href="#faq:java">Java</a>
+        Click either of them and the details for the term will open automatically.
+        .
+</section>
+<section aria-labelledby="faq" _="on hashchange from window add @open to <details:target/>">
+    <h2 id="faq">Frequently asked questions</h2>
+    <details id="faq:term" name="faq">
+        <summary>What do I mean by "term"?</summary>
+        <p>A term is ....
+    </details>
+    <details id="faq:java" name="faq">
+        <summary>Java</summary>
+        <p>Java is ....
+    </details>
+</section>
+</body>
+</html>
