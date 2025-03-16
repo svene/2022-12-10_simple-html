@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Daisy UI</title>
+
+    <!--    only include button (did not get it to work yet): https://daisyui.com/docs/v5/#micro-css-files-for-no-build-projects -->
+    <!--    <link href="https://cdn.jsdelivr.net/npm/daisyui@5/components/button.css" rel="stylesheet" type="text/css" />-->
+
+    <!-- include complete daisyui: -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css"/>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+
+<body>
+
+<!--
+See:
+https://dev.to/codeply/helpful-page-layouts-using-tailwind-css-1a3k
+https://www.codeply.com/p/bACkfI6wD2
+-->
+
+<div class="container mx-auto border">
+    <div class="container p-2 mx-auto">
+        <div class="flex flex-row flex-wrap py-4 mx-4">
+
+            <main role="main" class="w-full sm:w-2/3 md:w-3/4 pt-1 px-2">
+                <!-- content area -->
+                <label class="input">
+                    <svg class="h-[1em] opacity-50" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <g stroke-linejoin="round" stroke-linecap="round" stroke-width="2.5" fill="none" stroke="currentColor">
+                            <circle cx="11" cy="11" r="8"></circle>
+                            <path d="m21 21-4.3-4.3"></path>
+                        </g>
+                    </svg>
+                    <input type="search" required placeholder="Search"/>
+                </label>
+
+                <ul class="list bg-base-100 rounded-box shadow-md">
+
+                    <li class="p-4 pb-2 text-xs opacity-60 tracking-wide">Most played songs this week</li>
+
+                    <li class="list-row">
+                        <div><img class="size-10 rounded-box" src="https://img.daisyui.com/images/profile/demo/1@94.webp"/></div>
+                        <div>
+                            <div>Dio Lupa</div>
+                            <div class="text-xs uppercase font-semibold opacity-60">Remaining Reason</div>
+                        </div>
+                        <button class="btn btn-square btn-ghost">
+                            <svg class="size-[1.2em]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g stroke-linejoin="round" stroke-linecap="round" stroke-width="2" fill="none" stroke="currentColor"><path d="M6 3L20 12 6 21 6 3z"></path></g></svg>
+                        </button>
+                        <button class="btn btn-square btn-ghost">
+                            <svg class="size-[1.2em]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g stroke-linejoin="round" stroke-linecap="round" stroke-width="2" fill="none" stroke="currentColor"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"></path></g></svg>
+                        </button>
+                    </li>
+
+                    <li class="list-row">
+                        <div><img class="size-10 rounded-box" src="https://img.daisyui.com/images/profile/demo/4@94.webp"/></div>
+                        <div>
+                            <div>Ellie Beilish</div>
+                            <div class="text-xs uppercase font-semibold opacity-60">Bears of a fever</div>
+                        </div>
+                        <button class="btn btn-square btn-ghost">
+                            <svg class="size-[1.2em]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g stroke-linejoin="round" stroke-linecap="round" stroke-width="2" fill="none" stroke="currentColor"><path d="M6 3L20 12 6 21 6 3z"></path></g></svg>
+                        </button>
+                        <button class="btn btn-square btn-ghost">
+                            <svg class="size-[1.2em]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g stroke-linejoin="round" stroke-linecap="round" stroke-width="2" fill="none" stroke="currentColor"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"></path></g></svg>
+                        </button>
+                    </li>
+
+                    <li class="list-row">
+                        <div><img class="size-10 rounded-box" src="https://img.daisyui.com/images/profile/demo/3@94.webp"/></div>
+                        <div>
+                            <div>Sabrino Gardener</div>
+                            <div class="text-xs uppercase font-semibold opacity-60">Cappuccino</div>
+                        </div>
+                        <button class="btn btn-square btn-ghost">
+                            <svg class="size-[1.2em]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g stroke-linejoin="round" stroke-linecap="round" stroke-width="2" fill="none" stroke="currentColor"><path d="M6 3L20 12 6 21 6 3z"></path></g></svg>
+                        </button>
+                        <button class="btn btn-square btn-ghost">
+                            <svg class="size-[1.2em]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g stroke-linejoin="round" stroke-linecap="round" stroke-width="2" fill="none" stroke="currentColor"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"></path></g></svg>
+                        </button>
+                    </li>
+
+                </ul>
+
+            </main>
+
+        </div>
+    </div>
+</div>
+
+
+
+</body>
+</html>
