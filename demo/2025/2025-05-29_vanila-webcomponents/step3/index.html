@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="index.css">
+    <script type="module" src="index.js" defer></script>
+</head>
+<body>
+<p>Avatar and badge, when their powers combine...</p>
+<div>
+    <x-badge content="5" id="live-badge">
+        <x-avatar src="https://i.pravatar.cc/150?u=a042581f4e29026704d"></x-avatar>
+    </x-badge>
+    &larr;
+    <input type="number" value="5" title="badge value"
+           oninput="document.getElementById('live-badge').content = this.value" />
+</div>
+</body>
+</html>

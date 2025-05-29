@@ -1,0 +1,5 @@
+@import "./components/avatar.css";
+@import "./components/badge.css";
+
+p, div { margin: 1em; font-family: sans-serif; }
+x-badge { vertical-align: middle; }

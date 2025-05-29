@@ -1,0 +1,13 @@
+@import "./reset.css";
+@import "./components/avatar.css";
+@import "./components/badge.css";
+
+body {
+    font-family: system-ui, sans-serif;
+}
+
+x-header, main {
+    margin: 1em;
+    padding: 1em;
+    border: 1px dashed black;
+}
