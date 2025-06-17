@@ -1,4 +1,4 @@
-function initGreeting() {
+function app() {
     const greet = (name) => console.log(`hello ${name}`);
 
     document.querySelectorAll("[data-greet]")
@@ -7,5 +7,4 @@ function initGreeting() {
             });
 }
 
-initGreeting();
-
+document.addEventListener('DOMContentLoaded', app);
