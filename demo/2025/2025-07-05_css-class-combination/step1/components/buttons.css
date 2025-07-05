@@ -1,0 +1,21 @@
+/*layer 'components' overrides layer 'base': */
+@layer base, components;
+
+@layer base {
+    .button {
+        padding: 10px;
+        border: none;
+        background-color: black;
+        color: white;
+    }
+}
+
+@layer components {
+    .button-primary {
+        background-color: blue;
+    }
+
+    .button-secondary {
+        background-color: gray;
+    }
+}

@@ -1,0 +1,34 @@
+/*layer 'components' overrides layer 'base': */
+@layer base, components;
+
+@layer base {
+    :root {
+        --button-padding: 10px;
+        --button-border: none;
+        --button-color: white;
+        --button-font-weight: bold;
+        --button-cursor: pointer;
+        --button-bg-color: black; /* default background */
+    }
+
+    .button {
+        padding: var(--button-padding);
+        border: var(--button-border);
+        color: var(--button-color);
+        font-weight: var(--button-font-weight);
+        cursor: var(--button-cursor);
+        background-color: var(--button-bg-color);
+    }
+}
+
+@layer components {
+    .button-primary {
+        --button-bg-color: blue;
+        --button-color: white;
+    }
+
+    .button-secondary {
+        --button-bg-color: gray;
+        --button-color: white;
+    }
+}
