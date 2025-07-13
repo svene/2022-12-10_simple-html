@@ -24,6 +24,8 @@
     aspect-ratio: 1;
     border-radius: 100vw;
     background: #eb2d59;
-    /*align-content: center;*/
-    /*justify-content: center;*/
+
+    @container style(--bg: #eb2d59) {
+        background-color: white;
+    }
 }
