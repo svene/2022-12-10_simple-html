@@ -25,7 +25,7 @@
     border-radius: 100vw;
     background: #eb2d59;
 
-    @container style(--bg: #eb2d59) {
+    @container style(--bg: var(--accent)) {
         background-color: white;
     }
 }
