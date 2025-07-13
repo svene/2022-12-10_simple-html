@@ -1,0 +1,29 @@
+:root {
+    --accent: #eb2d59;
+    --bg: blue;
+}
+
+.parent {
+    display: flex;
+    background-color: var(--bg);
+    width: fit-content;
+    border-radius: 50vw;
+    border-width: 5px;
+    border-color: white;
+    border-style: solid;
+    margin-bottom: 10px;
+    padding: 10px;
+}
+
+.accent {
+    --bg: var(--accent);
+}
+
+.child {
+    width: 125px;
+    aspect-ratio: 1;
+    border-radius: 100vw;
+    background: #eb2d59;
+    /*align-content: center;*/
+    /*justify-content: center;*/
+}
