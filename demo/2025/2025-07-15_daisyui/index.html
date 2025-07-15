@@ -13,10 +13,40 @@
 
 <body data-theme="cupcake">
 
+
+<div class="divider"></div>
+<h1 class="text-4xl font-bold">H1</h1>
+<h2 class="text-3xl font-semibold">H2</h2>
+<h3 class="text-2xl">H3</h3>
+<h4 class="text-xl">H4</h4>
+
+<div class="divider"></div>
+<h1 class="text-4xl font-bold mb-2">Buttons</h1>
 <button class="btn" onclick="app.toggleTheme()">Light/Dark</button>
 <button class="btn btn-primary">Button</button>
 <button class="btn w-64 rounded-full">Button</button>
 
+<div class="divider"></div>
+<h1 class="text-4xl font-bold mb-2">Dropdowns</h1>
+
+<h4 class="text-xl">with details and summary</h4>
+<details class="dropdown">
+    <summary class="btn m-1">open or close</summary>
+    <ul class="menu dropdown-content bg-base-100 rounded-box z-1 w-52 p-2 shadow-sm">
+        <li><a>Item 1</a></li>
+        <li><a>Item 2</a></li>
+    </ul>
+</details>
+
+<h4 class="text-xl">with popover and anchor positioning</h4>
+<button class="btn" popovertarget="popover-1" style="anchor-name:--anchor-1">
+    open or close
+</button>
+<ul class="dropdown menu w-52 rounded-box bg-base-100 shadow-sm"
+    popover id="popover-1" style="position-anchor:--anchor-1">
+    <li><a>Item 1</a></li>
+    <li><a>Item 2</a></li>
+</ul>
 
 </body>
 </html>
