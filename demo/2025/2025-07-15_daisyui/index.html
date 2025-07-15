@@ -4,16 +4,16 @@
     <meta charset="UTF-8">
     <title>Daisy UI</title>
 
-    <!--    only include button (did not get it to work yet): https://daisyui.com/docs/v5/#micro-css-files-for-no-build-projects -->
-    <!--    <link href="https://cdn.jsdelivr.net/npm/daisyui@5/components/button.css" rel="stylesheet" type="text/css" />-->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 
     <link rel="stylesheet" href="index.css">
     <script type="module" src="index.js" defer></script>
 </head>
 
-<body data-theme="bumblebee">
+<body data-theme="cupcake">
 
-<button class="btn" onclick="document.body.setAttribute('data-theme', 'dark')">Button</button>
+<button class="btn" onclick="app.toggleTheme()">Light/Dark</button>
 <button class="btn btn-primary">Button</button>
 <button class="btn w-64 rounded-full">Button</button>
 

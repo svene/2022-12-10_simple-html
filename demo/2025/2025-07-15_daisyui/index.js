@@ -1,9 +1,10 @@
-import * as tailwind from 'https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4.1.11/+esm';
+import { applySystemPreference, toggleTheme } from "./theme.js";
 
-tailwind.startWatching();
+window.app = window.app || {};
+window.app.toggleTheme = toggleTheme;
 
-if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-    document.body.setAttribute('data-theme', 'dark');
-} else {
-    document.body.setAttribute('data-theme', 'light');
-}
+applySystemPreference();
+
+
+
+
