@@ -1,0 +1,27 @@
+*, *::before, *::after { position: relative; margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    background-color: black;
+    color: white;
+}
+
+.container {
+ display: flex;
+    margin: 10px;
+    gap: 10px;
+}
+
+.card {
+    min-width: 100px;
+    min-height: 200px;
+    width: fit-content;
+    height: fit-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-style: solid;
+
+    --status: attr(data-status type(<custom-ident>));
+    border-color: if(style(--status:pending): blue; style(--status: complete): green; else: gray);
+    background-color: if(style(--status:pending):blue; style(--status: complete): green; else: gray);
+}
