@@ -14,5 +14,17 @@ const app = () => {
             console.log(data);
         }
     });
+
+    // ----- Custom Commands
+    const cct = document.getElementById("custom-command-target");
+    cct.addEventListener("command", (event) => {
+        if ( event.command == "--landscape" ) {
+            console.log('landscape');
+        } else if ( event.command == "--portrait" ) {
+            console.log('protrait');
+        }
+    });
+
+
 }
 document.addEventListener('DOMContentLoaded', app);
